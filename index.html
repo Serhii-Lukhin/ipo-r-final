@@ -18,55 +18,57 @@
     <header class="header">
       <div class="container header-fluid">
         <a href="#" class="logo">IPO-R<span>IN</span>UA</a>
-        <div>
-          <!--
-          <svg class="icon-menu">
-            <use href="./img/icons.svg#icon-menu"></use>
-          </svg>
-          <svg class="icon-menu">
-            <use href="./img/icons.svg#icon-close"></use>
-          </svg> -->
-          <nav class="header-menu">
-            <ul class="list-reset header-menu-list">
-              <li class="header-menu-item">
-                <a href="#" class="link-menu">Що таке IPO-R?</a>
-              </li>
-              <li class="header-menu-item">
-                <a href="#" class="link-menu">Завантажити</a>
-              </li>
-              <li class="header-menu-item">
-                <a href="#" class="link-menu">Є питання?</a>
-              </li>
-            </ul>
-            <!--
-            <ul class="list-reset contacts-social-list">
-              <li class="contacts-social-list-item">
-                <a href="#" class="social-btn"
-                  ><svg class="icon-social">
-                    <use href="./img/icons.svg#icon-instagram"></use></svg
-                ></a>
-              </li>
-              <li class="contacts-social-list-item">
-                <a href="#" class="social-btn"
-                  ><svg class="icon-social">
-                    <use href="./img/icons.svg#icon-facebook"></use></svg
-                ></a>
-              </li>
-              <li class="contacts-social-list-item">
-                <a href="#" class="social-btn"
-                  ><svg class="icon-social">
-                    <use href="./img/icons.svg#icon-youtube"></use></svg
-                ></a>
-              </li>
-              <li class="contacts-social-list-item">
-                <a href="#" class="social-btn"
-                  ><svg class="icon-social">
-                    <use href="./img/icons.svg#icon-mail"></use></svg
-                ></a>
-              </li>
-            </ul>-->
-          </nav>
-        </div>
+        <svg class="icon-menu" id="open-menu-btn">
+          <use href="./img/icons.svg#icon-menu"></use>
+        </svg>
+        <svg class="icon-close-menu" id="close-menu-btn">
+          <use href="./img/icons.svg#icon-close"></use>
+        </svg>
+        <nav class="header-menu" id="my-menu">
+          <ul class="list-reset header-menu-list">
+            <li class="header-menu-item">
+              <a href="#about-section" class="link-menu" id="about-btn"
+                >Що таке IPO-R?</a
+              >
+            </li>
+            <li class="header-menu-item">
+              <a href="#download-section" class="link-menu" id="download-btn"
+                >Завантажити</a
+              >
+            </li>
+            <li class="header-menu-item">
+              <a href="#contacts-section" class="link-menu" id="contacts-btn"
+                >Є питання?</a
+              >
+            </li>
+          </ul>
+          <ul class="list-reset contacts-social-list">
+            <li class="contacts-social-list-item">
+              <a href="#" class="social-btn"
+                ><svg class="icon-social">
+                  <use href="./img/icons.svg#icon-instagram"></use></svg
+              ></a>
+            </li>
+            <li class="contacts-social-list-item">
+              <a href="#" class="social-btn"
+                ><svg class="icon-social">
+                  <use href="./img/icons.svg#icon-facebook"></use></svg
+              ></a>
+            </li>
+            <li class="contacts-social-list-item">
+              <a href="#" class="social-btn"
+                ><svg class="icon-social">
+                  <use href="./img/icons.svg#icon-youtube"></use></svg
+              ></a>
+            </li>
+            <li class="contacts-social-list-item" id="open-mail-form">
+              <a href="#" class="social-btn"
+                ><svg class="icon-social">
+                  <use href="./img/icons.svg#icon-mail"></use></svg
+              ></a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
     <main>
@@ -74,11 +76,11 @@
       <section class="hero">
         <div class="container hero-fluid">
           <h1 class="hero-title">Правила IPO-R українською мовою</h1>
-          <a href="#" class="button">Завантажити</a>
+          <a href="./download/IPO-R_2019_UA.pdf" class="button">Завантажити</a>
         </div>
       </section>
       <!--about-->
-      <section class="about">
+      <section class="about" id="about-section">
         <div class="container">
           <svg class="icon-title">
             <use href="./img/icons.svg#icon-about"></use>
@@ -103,7 +105,7 @@
         </div>
       </section>
       <!--download-->
-      <section class="download">
+      <section class="download" id="download-section">
         <div class="container">
           <svg class="icon-title">
             <use href="./img/icons.svg#icon-download"></use>
@@ -119,7 +121,9 @@
                     адаптований для електронного читання
                   </p>
                 </div>
-                <a href="#" class="button">Завантажити</a>
+                <a href="./download/IPO-R_2019_UA.pdf" class="button"
+                  >Завантажити</a
+                >
               </div>
             </li>
             <li class="download-list-item">
@@ -132,7 +136,9 @@
                     брошуру
                   </p>
                 </div>
-                <a href="#" class="button">Завантажити</a>
+                <a href="./download/IPO-R_2019_UA-print.pdf" class="button"
+                  >Завантажити</a
+                >
               </div>
             </li>
             <li class="download-list-item">
@@ -144,14 +150,18 @@
                     року
                   </p>
                 </div>
-                <a href="#" class="button">Завантажити</a>
+                <a
+                  href="./download/ScoreSheetIPO-R-2019_UA_all.pdf"
+                  class="button"
+                  >Завантажити</a
+                >
               </div>
             </li>
           </ul>
         </div>
       </section>
       <!--contacts-->
-      <section class="contacts">
+      <section class="contacts" id="contacts-section">
         <div class="container">
           <svg class="icon-title">
             <use href="./img/icons.svg#icon-contacts"></use>
@@ -180,7 +190,7 @@
                   <use href="./img/icons.svg#icon-youtube"></use></svg
               ></a>
             </li>
-            <li class="contacts-social-list-item">
+            <li class="contacts-social-list-item" id="open-mail-form-footer">
               <a href="#" class="social-btn"
                 ><svg class="icon-social">
                   <use href="./img/icons.svg#icon-mail"></use></svg
@@ -201,10 +211,23 @@
       </div>
     </footer>
     <!--popup-->
-    <!--
-    <div class="popup hidden">
-
+    <div class="popup-bg" id="modal-mail-form">
+      <div class="popup-block">
+        <svg class="popup-icon" id="close-mail-form">
+          <use href="./img/icons.svg#icon-close"></use>
+        </svg>
+        <form class="popup-form">
+          <p class="small-text popup-label">Ваше ім'я</p>
+          <input type="text" name="username" class="popup-input" />
+          <p class="small-text popup-label">E-mail</p>
+          <input type="text" name="email" class="popup-input" />
+          <p class="small-text popup-label">Питання</p>
+          <textarea name="question" class="popup-input-big"></textarea>
+          <button type="button" class="button">Відправити</button>
+        </form>
+      </div>
     </div>
-    -->
+
+    <script src="./java/script.js"></script>
   </body>
 </html>
