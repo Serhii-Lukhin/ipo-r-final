@@ -313,19 +313,23 @@ svg {
   margin: 0 auto;
 }
 /*popup*/
+.popup-scroll {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s case-in-out;
+}
 .popup-bg {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   background-color: var(--darkness);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s case-in-out;
 }
 .popup-block {
   background-color: var(--sunny-day);
@@ -459,10 +463,17 @@ svg {
     margin-right: auto;
   }
   /*popup*/
+  .popup-scroll {
+    height: 100%;
+    overflow: auto;
+  }
+  .popup-bg {
+    min-height: 676px;
+  }
   .popup-block {
     background-color: var(--sunny-day);
     width: 428px;
-    height: 620px;
+    max-height: 620px;
     border-radius: 8px;
   }
 }
