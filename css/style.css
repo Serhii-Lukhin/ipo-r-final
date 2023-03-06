@@ -283,21 +283,20 @@ svg {
   width: 40px;
   height: 40px;
   padding: 12px;
+  color: var(--sunny-day);
 }
 .social-btn:hover,
 .social-btn:focus {
   background: var(--yellow);
+  color: var(--night);
 }
 .icon-social {
   display: block;
   height: 16px;
   width: 16px;
-  fill: var(--sunny-day);
+  fill: currentColor;
 }
-.social-btn:hover > .icon-social,
-.social-btn:focus > .icon-social {
-  fill: var(--night);
-}
+
 /*footer*/
 .footer {
   padding: 20px 0 30px;
