@@ -12,6 +12,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: var(--night);
   letter-spacing: 0.02em;
+  width: 100%;
 }
 p,
 div,
@@ -136,27 +137,52 @@ svg {
   fill: var(--sunny-day);
   cursor: pointer;
 }
+.header-menu-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--darkness);
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-menu {
+  background-color: var(--dark-blue);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 80px;
+  filter: drop-shadow(-5px 0px 8px rgba(0, 0, 0, 0.4));
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 250ms ease;
+}
+.header-menu-bg.visible-element > .header-menu {
+  transform: translateX(0);
+}
+.btn-close-menu {
+  padding: 24px 24px 54px;
+}
 .icon-close-menu {
-  display: none;
   width: 22px;
   height: 22px;
   fill: var(--sunny-day);
   cursor: pointer;
+  display: block;
+  margin-left: auto;
 }
-.header-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  background-color: var(--dark-blue);
-  width: 100%;
-  height: calc(100% - 70px);
-  padding: 40px 40px 80px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+nav {
+  flex-grow: 1;
+}
+.header-menu-list {
+  padding: 0 40px;
 }
 .header-menu-item {
   margin-bottom: 40px;
@@ -385,18 +411,36 @@ svg {
 /*Tablet style*/
 @media screen and (min-width: 768px) {
   /*header*/
-  .header-menu {
+  .header-menu-bg {
     position: static;
-    flex-direction: row;
     background-color: transparent;
     width: auto;
     height: auto;
-    padding: 0;
     opacity: 1;
     pointer-events: all;
   }
+  .header-menu {
+    position: static;
+    background-color: transparent;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0;
+    filter: none;
+    transform: translateX(0);
+  }
+  nav {
+    flex-grow: 0;
+  }
+  .btn-close-menu {
+    display: none;
+  }
+  .icon-menu {
+    display: none;
+  }
   .header-menu-list {
     display: flex;
+    padding: 0;
   }
   .header-menu-item {
     margin-right: 24px;
@@ -421,9 +465,6 @@ svg {
     color: var(--yellow);
     border-bottom: 2px solid var(--yellow);
     padding-bottom: 24px;
-  }
-  .icon-menu {
-    display: none;
   }
   .header-menu > .contacts-social-list {
     display: none;
@@ -499,14 +540,40 @@ svg {
     width: calc((100% - 2 * 24px) / 3);
   }
 }
+
+/*кнлопка вгору*/
+.button-up {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 25px;
+  background-color: var(--snow-white);
+  width: 50px;
+  height: 100px;
+  border: 1px solid var(--light-blue);
+  border-bottom: 0;
+  text-align: center;
+  padding-top: 15px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  color: var(--light-blue);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-up:is(:hover, :focus) {
+  color: var(--dark-blue);
+  border-color: var(--dark-blue);
+}
+.icon-fix {
+  fill: currentColor;
+}
+
 /*активізація меню і popup*/
 .visible-element {
   opacity: 1;
   pointer-events: all;
 }
-.icon-visible {
-  display: block;
-}
-.icon-hidden {
-  display: none;
+.stop-scroll {
+  position: fixed;
 }
